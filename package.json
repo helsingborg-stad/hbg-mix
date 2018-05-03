@@ -1,0 +1,19 @@
+{
+  "name": "hbg-mix",
+  "version": "1.0.0",
+  "description": "Handy SASS functions/mixins for Helsingborg Stad projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helsingborg-stad/hbg-mix.git"
+  },
+  "author": "Nikolas Ramstedt <nikolas.ramstedt@helsingborg.se>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/helsingborg-stad/hbg-mix/issues"
+  },
+  "homepage": "https://github.com/helsingborg-stad/hbg-mix#readme"
+}
