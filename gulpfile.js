@@ -8,6 +8,10 @@
     del             =   require('del'),
     runSequence     =   require('run-sequence'),
     plumber         =   require('gulp-plumber'),
+    bump            =   require('gulp-bump'),
+    git             =   require('gulp-git'),
+    filter          =   require('gulp-filter'),
+    tag_version     =   require('gulp-tag-version'),
     node_modules    =   'node_modules/';
 
 /* ==========================================================================
@@ -17,7 +21,6 @@
     gulp.task('default', function(callback) {
         runSequence('sass', 'watch', callback);
     });
-
 
 /* ==========================================================================
    Watch task
@@ -43,10 +46,18 @@
     });
 
 /* ==========================================================================
-   Clean/Clear tasks
+   Verisioning tasks
    ========================================================================== */
 
-    gulp.task('clean:dist', function () {
-        return del.sync('./dist');
-    });
+function inc(importance) {
+    return gulp.src(['./package.json'])
+        .pipe(bump({type: importance}))
+        .pipe(gulp.dest('./'))
+        .pipe(git.commit('Bumps package version'))
+        .pipe(filter('package.json'))
+        .pipe(tag_version());
+}
 
+gulp.task('patch', function() { return inc('patch'); })
+gulp.task('minor', function() { return inc('minor'); })
+gulp.task('major', function() { return inc('major'); })
