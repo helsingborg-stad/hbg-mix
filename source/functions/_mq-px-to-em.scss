@@ -1,0 +1,11 @@
+@function mq-px-to-em($value, $base: 16) {
+    @if unit($value) == 'px' {
+        @return strip-unit($value) / $base * 1em;
+    } @elseif unit($value) == 'em' {
+        @return $value;
+    } @elseif unitless($value) {
+        @return $value / $base * 1em;
+    } @else {
+        @return 0;
+    }
+}

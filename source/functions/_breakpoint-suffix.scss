@@ -1,0 +1,9 @@
+@function get-breakpoint-suffix($screen) {
+    @if map-has-key($mq-breakpoints, $screen) {
+        @if map-get($mq-breakpoints, $screen) == 0 {
+            @return '';
+        } @else {
+            @return \@#{$screen};
+        }
+    }
+}

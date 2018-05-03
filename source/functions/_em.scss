@@ -1,0 +1,5 @@
+@function em($value, $base: 16) {
+    @if unit($value) == 'px' {
+        @return strip-unit($value) / $base * 1em;
+    }
+}
