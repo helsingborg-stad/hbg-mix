@@ -1,5 +1,9 @@
-@function em($value, $base: 16) {
+@function em($value, $base: $hbg-mix-em-base) {
     @if unit($value) == 'px' {
         @return strip-unit($value) / $base * 1em;
+    } @elseif unit($value) == 'em' {
+        @return $value;
+    } @else {
+        @error '$value parameter must be in PX or EM';
     }
 }

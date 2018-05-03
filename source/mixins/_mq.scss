@@ -13,19 +13,19 @@
 
     //Min-width
     @if ($from != null and $from != 'print') {
-        @if map-has-key($mq-breakpoints, $from) {
-            $min-width: mq-px-to-em(map-get($mq-breakpoints, $from));
+        @if map-has-key($hbg-mix-mq-breakpoints, $from) {
+            $min-width: em(map-get($hbg-mix-mq-breakpoints, $from));
         } @else {
-            $min-width: mq-px-to-em($from);
+            $min-width: em($from);
         }
     }
 
     //Max-width
     @if ($until != null and $until != 'print') {
-        @if map-has-key($mq-breakpoints, $until) {
-            $max-width: mq-px-to-em(map-get($mq-breakpoints, $until)) - mq-px-to-em(1px);
+        @if map-has-key($hbg-mix-mq-breakpoints, $until) {
+            $max-width: em(map-get($hbg-mix-mq-breakpoints, $until)) - em(1px);
         } @else {
-            $max-width: mq-px-to-em($until);
+            $max-width: em($until);
         }
     }
 

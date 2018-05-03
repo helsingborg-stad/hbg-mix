@@ -1,9 +1,11 @@
-@function get-breakpoint-suffix($screen) {
-    @if map-has-key($mq-breakpoints, $screen) {
-        @if map-get($mq-breakpoints, $screen) == 0 {
+@function get-breakpoint-suffix($screen, $includeZero: null) {
+    @if map-has-key($hbg-mix-mq-breakpoints, $screen) {
+        @if map-get($hbg-mix-mq-breakpoints, $screen) == 0 and $includeZero == null {
             @return '';
         } @else {
             @return \@#{$screen};
         }
+    } @elseif $screen == 'print' {
+        @return \@#{$screen};
     }
 }

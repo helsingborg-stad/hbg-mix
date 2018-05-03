@@ -1,5 +1,9 @@
-@function rem($value, $base: 16) {
+@function rem($value, $base: $hbg-mix-rem-base) {
     @if unit($value) == 'px' {
         @return strip-unit($value) / $base * 1rem;
+    } @elseif unit($value) == 'rem' {
+        @return $value;
+    } @else {
+        @error '$value parameter must be in PX or REM';
     }
 }
