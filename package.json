@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/helsingborg-stad/hbg-mix/issues"
   },
-  "homepage": "https://github.com/helsingborg-stad/hbg-mix#readme"
+  "homepage": "https://github.com/helsingborg-stad/hbg-mix#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^4.0.1",
+    "run-sequence": "^2.2.1"
+  }
 }
