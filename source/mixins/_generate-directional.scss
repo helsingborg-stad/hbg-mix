@@ -21,10 +21,14 @@
  */
 
 @mixin directionalClasses($styles, $propety, $className, $breakpoints: map-keys($hbg-mix-mq-breakpoints), $important: true, $nameSpace: 'u') {
-    @each $screen in $breakpoints {
-        $suffix: get-breakpoint-suffix($screen);
+    $breakpoints: join((null), $breakpoints);
 
-        @include mq($screen) {
+    @each $screen in $breakpoints {
+        $suffix: get-breakpoint-suffix($screen, true);
+        $next: next-breakpoint($screen);
+
+
+        @include mq($screen, $next) {
             @each $size, $value in $styles {
 
                 @if ($important == true) {
