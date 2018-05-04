@@ -3,6 +3,11 @@
         @return strip-unit($value) / $base * 1rem;
     } @elseif unit($value) == 'rem' {
         @return $value;
+    } @elseif unitless($value) {
+        @if $value == 0 {
+            @return 0;
+        }
+        @return $value * 1rem;
     } @else {
         @error '$value parameter must be in PX or REM';
     }

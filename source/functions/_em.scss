@@ -3,6 +3,11 @@
         @return strip-unit($value) / $base * 1em;
     } @elseif unit($value) == 'em' {
         @return $value;
+    } @elseif unitless($value) {
+        @if $value == 0 {
+            @return 0;
+        }
+        @return $value * 1em;
     } @else {
         @error '$value parameter must be in PX or EM';
     }
