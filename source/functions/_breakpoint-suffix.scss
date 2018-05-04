@@ -7,5 +7,7 @@
         }
     } @elseif $screen == 'print' {
         @return \@#{$screen};
+    } @else {
+        @return '';
     }
 }
