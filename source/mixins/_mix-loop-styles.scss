@@ -21,10 +21,16 @@
 
                 @if type-of($dimensions) == 'map' {
                     @each $dimensionClass, $dimensionPropety in $dimensions {
+                        @if type-of($dimensionPropety) != 'list' {
+                            $dimensionPropety: ($dimensionPropety);
+                        }
+
                         $dimensionClass: #{$className}#{$dimensionClass}#{$valueSuffix}#{$suffix};
                         #{$dimensionClass} {
                             @each $style in map-values($styles) {
-                                #{$dimensionPropety}: #{$style};
+                                @each $propety in $dimensionPropety {
+                                    #{$propety}: #{$style};
+                                }
                             }
                         }
                     }
