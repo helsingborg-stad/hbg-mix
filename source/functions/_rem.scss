@@ -1,4 +1,4 @@
-@function rem($value, $base: $hbg-mix-rem-base) {
+@function rem($value, $base: $mix-rem-base) {
     @if unit($value) == 'px' {
         @return strip-unit($value) / $base * 1rem;
     } @elseif unit($value) == 'rem' {

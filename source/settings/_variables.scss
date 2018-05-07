@@ -1,4 +1,12 @@
-$hbg-mix-mq-breakpoints: (
+//Units
+$mix-rem-base: 16 !default;
+$mix-em-base: 16 !default;
+
+//Color map
+$mix-color-map: () !default;
+
+//Breakpoints
+$mix-mq-breakpoints: (
     xs : 0,         //0px
     sm : 29.25em,   //468px
     md : 48em,      //768px

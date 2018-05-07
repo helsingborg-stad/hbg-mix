@@ -3,15 +3,15 @@
         @content;
     }
 
-    $last: length($hbg-mix-mq-breakpoints);
+    $last: length($mix-mq-breakpoints);
 
     @each $breakpoint in $breakpoints {
-        @if (map-has-key($hbg-mix-mq-breakpoints, $breakpoint)) {
+        @if (map-has-key($mix-mq-breakpoints, $breakpoint)) {
             $suffix: get-breakpoint-suffix($breakpoint, true);
-            $current: index(map-keys($hbg-mix-mq-breakpoints), $breakpoint);
+            $current: index(map-keys($mix-mq-breakpoints), $breakpoint);
 
             @if $current != $last {
-                @include mq($breakpoint, nth(map-keys($hbg-mix-mq-breakpoints), $current + 1)) {
+                @include mq($breakpoint, nth(map-keys($mix-mq-breakpoints), $current + 1)) {
                     .#{$className}#{$suffix} {
                         @content;
                     }

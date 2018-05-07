@@ -20,7 +20,7 @@
  *
  */
 
-@mixin directionalClasses($styles, $propety, $className, $breakpoints: map-keys($hbg-mix-mq-breakpoints), $important: true, $nameSpace: 'u') {
+@mixin directionalClasses($styles, $propety, $className, $breakpoints: map-keys($mix-mq-breakpoints), $important: true, $nameSpace: 'u') {
     $breakpoints: join((null), $breakpoints);
 
     @each $screen in $breakpoints {
