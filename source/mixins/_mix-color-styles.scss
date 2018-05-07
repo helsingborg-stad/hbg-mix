@@ -1,0 +1,28 @@
+@mixin mixColorStyles($className, $propety, $colorList, $hoverElements: '', $important: null, $types: (base : '', muted : '.is-muted', disabled: '.is-disabled', hover: ':hover')) {
+    $hoverElements: _hoverElements($hoverElements);
+    $important: _importantToString($important);
+
+    @each $colorName in $colorList {
+        @each $type, $typeSuffix in $types {
+            @if getColor($colorName, $type) != null {
+                $class: #{$className}#{$colorName}#{$typeSuffix};
+
+                @if $type != hover {
+                    #{$class} {
+                        #{$propety}: #{getColor($colorName, 'base')}#{$important};
+                    }
+                }
+
+                @elseif $type == hover {
+                    @each $hoverPrefix in $hoverElements {
+                        $hoverClass: #{$hoverPrefix}#{$className}#{$colorName}#{$typeSuffix};
+
+                            #{$hoverClass} {
+                                #{$propety}: #{getColor($colorName, 'base')}#{$important};
+                            }
+                        }
+                }
+            }
+        }
+    }
+}

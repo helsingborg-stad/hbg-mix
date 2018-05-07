@@ -9,5 +9,12 @@
 @import 'functions/breakpoint-suffix';
 @import 'functions/next-breakpoint';
 
+@import 'functions/get-color';
+@import 'functions/remove-list-item';
+@import 'functions/validate-breakpoint-list';
+@import 'functions/mix-color-style-functions.scss';
+
 //Mixins
 @import 'mixins/mq';
+@import 'mixins/mix-color-styles';
+@import 'mixins/mix-loop-styles';
