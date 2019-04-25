@@ -1,6 +1,6 @@
 {
   "name": "hbg-mix",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Handy SASS functions/mixins for Helsingborg Stad projects",
   "main": "index.js",
   "scripts": {
