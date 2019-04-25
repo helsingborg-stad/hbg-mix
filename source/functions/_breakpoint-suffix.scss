@@ -5,7 +5,7 @@
         } @else {
             @return \@#{$screen};
         }
-    } @elseif $screen == 'print' {
+    } @else if $screen == 'print' {
         @return \@#{$screen};
     } @else {
         @return '';

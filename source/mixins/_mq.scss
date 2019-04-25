@@ -41,7 +41,7 @@
     //Orientation
     @if $orientation == 'landscape' {
         $queryString: '#{$queryString} and (orientation:landscape)';
-    } @elseif $orientation == 'portrait' {
+    } @else if $orientation == 'portrait' {
         $queryString: '#{$queryString} and (orientation:portrait)';
     }
 

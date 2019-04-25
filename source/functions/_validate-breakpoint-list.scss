@@ -3,7 +3,7 @@
 
     @if ($breakpoints == all) {
         $breakpoints: 0, xs, sm, md, lg, xl;
-    } @elseif type-of($breakpoints) != list {
+    } @else if type-of($breakpoints) != list {
         $breakpoints: ($breakpoints);
     }
 

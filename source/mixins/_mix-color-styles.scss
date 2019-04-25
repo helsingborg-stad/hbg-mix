@@ -13,7 +13,7 @@
                     }
                 }
 
-                @elseif $type == hover {
+                @else if $type == hover {
                     @each $hoverPrefix in $hoverElements {
                         $hoverClass: #{$hoverPrefix}#{$className}#{$colorName}#{$typeSuffix};
 

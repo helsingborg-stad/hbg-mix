@@ -1,9 +1,9 @@
 @function em($value, $base: $mix-em-base) {
     @if unit($value) == 'px' {
         @return strip-unit($value) / $base * 1em;
-    } @elseif unit($value) == 'em' {
+    } @else if unit($value) == 'em' {
         @return $value;
-    } @elseif unitless($value) {
+    } @else if unitless($value) {
         @if $value == 0 {
             @return 0;
         }
